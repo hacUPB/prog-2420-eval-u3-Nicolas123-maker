@@ -7,4 +7,12 @@ Imagina por un momento una tienda que su fachada sea una pantalla, como las que 
 
 Viendo mas allá del código, después de armar tu carrito de compras y pagar, recibirías tus productos empacados cuidadosamente en bolsa (reutilizable claro ;) ) por medio de una cinta tranportadora. Tal vez la tienda como tal no sea muy utilizada porque se sale de lo común y tal vez la mayoría de personas prefieran mas una ienda tradicional (una en la que puedas ver los productos en persona) pero seria interesante tener una asi, de seguro mas de una persona iría por lo menos para tener la experiencia, y este código es la base para que una tienda así pueda existir.
 
-![Hola](C:\Users\DELL\Desktop\prog-2420-eval-u3-Nicolas123-maker\Imagenes)
+### --> Estructuras de datos a utilizar:
+
+Por el momento pienso utilizar las siguientes estructura:
+
+- Listas.
+- Diccionarios. 
+
+![Imagen #2](..\Imagenes\flork.png)
+
