@@ -16,3 +16,8 @@ Por el momento pienso utilizar las siguientes estructura:
 
 ![Imagen #2](..\Imagenes\flork.png)
 
+### --> Diagrama del problema:
+
+![Parte#1](..\Imagenes\Diagrama1.jpeg)
+
+![Parte#2](..\Imagenes\Diagrama2.jpeg)
