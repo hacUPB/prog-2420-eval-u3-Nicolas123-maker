@@ -2,7 +2,9 @@
 def main():
     from os import system
     import time
-    from src.Funciones_del_código import Bloqueo_de_seguridad
+    from Funciones_del_código import Bloqueo_de_seguridad
+    from Funciones_del_código import Modificar_inventarios
+    from Funciones_del_código import inventarios
     contraseña = "Contraseña_predeterminada123"
     control = True
     while control == True:
@@ -41,7 +43,11 @@ def main():
                             print("¡Contraseña actualizada exitosamente!")
                             Control2 = False
                         elif z == 2:
-                            pass 
+                            print("Excelente!, este es el inventario actual:")
+                            Modificar_inventarios(inventarios)
+                            v = str(input("¿Qué sección desea modificar?(Mecatos, Aseo y hogar, Productos varios):"))
+                            v.capitalize()
+                            Control2 = False
                     control1 = True
 
 

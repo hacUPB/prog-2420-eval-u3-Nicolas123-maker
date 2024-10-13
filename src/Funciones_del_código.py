@@ -9,13 +9,22 @@ def Bloqueo_de_seguridad(segundos:float):
             segundos -= 1
         return(tiempo_restante)
 
+def Modificar_inventarios(lista):
+    print("\nEste es el inventario actual:")
+    for i in lista:
+        b = print(f"\nEn la sección de {i}, se tienen los siguientes productos:\n")
+        for j in lista[i]:
+           a = print(f"-->{j}:\n  -Precio: ${lista[i][j]["precio"]}\n -Cantidad disponible en tienda: {lista[i][j]["Cantidad en tienda"]} unidades.\n ")
+
+    
+
 inventarios = {
-    "Mecatos": {
-        'papas de limon': {
+    "Mecatos":{
+        "Papas de limón": {
             "precio": 2500, 
-            "cantidad en tienda": 5 
+            "Cantidad en tienda": 5 
         },        
-        'Galletas': {
+        'Galletas':  {
             "precio": 1800,
             "Cantidad en tienda": 20
         },
@@ -23,22 +32,21 @@ inventarios = {
             "precio": 850,
             "Cantidad en tienda": 50
         },
+    },
     "Aseo y hogar":{
         "Fabuloso":{
-            "Precio": 10000,
+            "precio": 10000,
             "Cantidad en tienda": 20
         },
         "Shampoo": {
-            "Precio": 15000,
+            "precio": 15000,
             "Cantidad en tienda": 16
         },
     },
     "Productos varios":{
         "f22 raptor":{
-            "Precio" : 10000000000,
+            "precio" : 10000000000,
             "Cantidad en tienda": 3
         }
     }
-    },
 }
-
