@@ -17,15 +17,15 @@ def Imprimir_inventarios(lista):
 
 def Modificar_inventarios(lista, Sección:str, Opcion:int, Nombre_producto:str, Nuevo_valor:int ):
     if Opcion == 1:
-        lista['Sección']['Nombre_producto']["precio"] = Nuevo_valor
+        lista[Sección][Nombre_producto]['precio'] = Nuevo_valor
+        print('\n Este es la sección del inventario actualizada:\n')
+        print(lista[Sección][Nombre_producto]['precio'])
     elif Opcion == 2:
-        lista['Sección']['Nombre_producto']['Cantidad'] = Nuevo_valor
-    print('\n Este es el inventario actualizado:')
-    for i in lista:
-        b = print(f"\nEn la sección de {i}, se tienen los siguientes productos:\n")
-        for j in lista[i]:
-           a = print(f"-->{j}:\n  -Precio: ${lista[i][j]["precio"]}\n -Cantidad disponible en tienda: {lista[i][j]["Cantidad en tienda"]} unidades.\n ")
-    
+        lista[Sección][Nombre_producto]['Cantidad en tienda'] = Nuevo_valor
+        print('\n Este es la sección del inventario actualizada:')
+        print(lista[Sección][Nombre_producto]['Cantidad en tienda'])
+
+
 inventarios = {
     "Mecatos":{
         "Papas de limon": {
@@ -58,3 +58,6 @@ inventarios = {
         }
     }
 }
+v= 'mecatos'
+v = v.capitalize()
+Modificar_inventarios(inventarios, v, 1, 'Papas de limon', 500)

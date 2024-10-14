@@ -3,8 +3,10 @@ def main():
     from os import system
     import time
     import Funciones_del_código
+    from Funciones_del_código import inventarios
     contraseña = "123"
     control = True
+    system('cls')
     while control == True:
         lista1 = [1, 2]
         print("1. Cliente\n2.Administrador")
@@ -41,8 +43,8 @@ def main():
                             print("¡Contraseña actualizada exitosamente!")
                             Control2 = False
                         elif z == 2:
-                            print("Excelente!, este es el inventario actual:")
-                            Funciones_del_código.Imprimir_inventarios(Funciones_del_código.inventarios)
+                            print("Excelente!, este es el inventario actual\n:")
+                            Funciones_del_código.Imprimir_inventarios(inventarios)
                             v = str(input("¿Qué sección desea modificar?(Mecatos, Aseo, Variedades):"))
                             v = v.capitalize()
                             control3 = True
@@ -53,18 +55,16 @@ def main():
                                     print("Por favor selecione una opción correcta")
                                     control3 = True
                                 elif d == 1:
-                                    Producto_nuevo = str(input("Que producto deseas modificar?(Asegurate que este se encuentre en el inventario actual): "))
+                                    Producto_nuevo = str(input(f"Que producto deseas modificar?(Asegurate que este se encuentre en el inventario actual), copialo tal cual a aparece aqui{inventarios[v].keys()}: "))
                                     Producto_nuevo1 = int(input(f"\nPerfecto!, ¿Cuál será el nuevo precio de {Producto_nuevo}?: "))
                                     system('cls')
-                                    print("\nEste es el nuevo inventario:\n")
-                                    Funciones_del_código.Modificar_inventarios(Funciones_del_código.inventarios, v, d, Producto_nuevo, Producto_nuevo1)
+                                    Funciones_del_código.Modificar_inventarios(inventarios, v, d, Producto_nuevo, Producto_nuevo1)
                                     control3 = False
                                 elif d == 2:
-                                    Producto_nuevo = str(input("Que producto deseas modificar?(Asegurate que este se encuentre en el inventario actual): "))
+                                    Producto_nuevo = str(input(f"Que producto deseas modificar?(Asegurate que este se encuentre en el inventario actual), copialo tal cual a aparece aqui{inventarios[v].keys()}: "))
                                     Producto_nuevo1 =int(input(f"\nPerfecto!, ¿Cuál es la nueva cantidad?:"))
                                     system('cls')
-                                    print("\nEste es el nuevo inventario:\n")
-                                    Funciones_del_código.Modificar_inventarios(Funciones_del_código.inventarios, v, d, Producto_nuevo, Producto_nuevo1)
+                                    Funciones_del_código.Modificar_inventarios(inventarios, v, d, Producto_nuevo, Producto_nuevo1)
                                     control3 = False
 
                             Control2 = False
