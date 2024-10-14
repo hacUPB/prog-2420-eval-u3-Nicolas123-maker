@@ -21,13 +21,15 @@ def Modificar_inventarios(lista, Sección:str, Opcion:int, Nombre_producto:str, 
         lista[Sección][Nombre_producto]['precio'] = Nuevo_valor
         system('cls')
         print('\n Esta es la sección del inventario actualizada:\n')
-        print(f'{Sección}:')
+        print(f'{Sección}:\n')
+        print(f'{Nombre_producto}:')
         print(f' -Precio: {lista[Sección][Nombre_producto]['precio']}\n -Cantidad disponible en tienda: {lista[Sección][Nombre_producto]["Cantidad en tienda"]}')
     elif Opcion == 2:
         lista[Sección][Nombre_producto]['Cantidad en tienda'] = Nuevo_valor
         system('cls')
         print('\n Esta es la sección del inventario actualizada:')
-        print(f'{Sección}:')
+        print(f'{Sección}:\n')
+        print(f'{Nombre_producto}:')
         print(f' -Precio: {lista[Sección][Nombre_producto]['precio']}\n -Cantidad disponible en tienda: {lista[Sección][Nombre_producto]["Cantidad en tienda"]}')
 
 
@@ -63,6 +65,3 @@ inventarios = {
         }
     }
 }
-v= 'mecatos'
-v = v.capitalize()
-Modificar_inventarios(inventarios, v, 1, 'Papas de limon', 500)
