@@ -36,7 +36,7 @@ def Modificar_inventarios(lista, Sección:str, Opcion:int, Nombre_producto:str, 
 inventarios = {
     "Mecatos":{
         "Papas de limon": {
-            "precio": 2500, 
+            "precio": 23, 
             "Cantidad en tienda": 5 
         },        
         'Galletas':  {
@@ -60,7 +60,7 @@ inventarios = {
     },
     "Variedades":{
         "f22 raptor":{
-            "precio" : 10000000000,
+            "precio" : 1,
             "Cantidad en tienda": 3
         }
     }

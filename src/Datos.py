@@ -4,7 +4,7 @@ def main():
     import time
     import Funciones_del_código
     from Funciones_del_código import inventarios
-    contraseña = "123"
+    contraseña = "Contraseña_predeterminada123"
     control = True
     system('cls')
     while control == True:
@@ -15,16 +15,65 @@ def main():
         if a not in lista1:
             print("Por favor seleccione una opción correcta")
         elif a == 1:
-            print()
-            control = False
+            v_control = True
+            print("Hola!, para una experiencia mas personalizada, por favor responda las siguientes preguntas:\n")
+            while v_control == True:
+                titulo = str(input(" -->Como prefiere que nos refiramos hacia usted? (sr. o sra):"))
+                titulo = titulo.capitalize()
+                if titulo not in ["Sr", "Sra"]:
+                    system('cls')
+                    print("Por favor verifique su respuesta")
+                else: 
+                    v_control = "false"
+                    system("cls")
+                    nombre = str(input(" -->Ingrese su nombre:"))
+                    nombre = nombre.capitalize()
+                    system('cls')
+                    print(f'Bienvenido a la primera tienda virtual de Medellín {titulo}. {nombre}\n')
+                    l = str(input("Desea ver los productos que tenemos disponibles para usted? (Si/No):"))
+                    l = l.capitalize()
+                    if l == "No":
+                        break
+                    elif l == "Si":
+                        system('cls')
+                        print(f"Excelente!, procesando...\n" )
+                        print({Funciones_del_código.Bloqueo_de_seguridad(6)}) 
+                        system('cls')
+                        Funciones_del_código.Imprimir_inventarios(inventarios)
+                    elif l not in ["Si", "No"]:
+                        print("La respuesta ingresada no se encuentra dentro de las opciones disponibles")
+                    v_de_respuesta= True
+                    Precio_total = 0
+                    while v_de_respuesta == True:
+                        Sección_producto = str(input("\nEn que sección se encuentra el producto que deseas comprar? (Mecatos, Aseo, Variedades): "))
+                        print(Funciones_del_código.Imprimir_inventarios)
+                        system('cls')
+                        Sección_producto = Sección_producto.capitalize()
+                        print(f'Excelente! Estos son los productos disponibles en la sección {Sección_producto}: \n')
+                        for producto in inventarios[Sección_producto]:
+                            print(f'{producto}\n -->Precio: {inventarios[Sección_producto][producto]['precio']}$\n -->Cantidad disponible en tienda: {inventarios[Sección_producto][producto]['Cantidad en tienda']}')
+                        Producto_compra = str(input("\nQue producto deseas comprar? (Asegúrate de copiarlo tal cual aparece en la pantalla): ")) 
+                        if Producto_compra not in inventarios[Sección_producto]:
+                            print("Escribiste mal el producto o este no está disponible por el momento")
+                        else:
+                            Continuación_de_compra = str(input('Deseas seguir comprando? (Si/No):'))
+                            Continuación_de_compra = Continuación_de_compra.capitalize()
+                            Precio_total += inventarios[Sección_producto][producto]['precio']
+                            if Continuación_de_compra == 'No':
+                                system('cls')
+                                print(f"El valor total de la compra es de {Precio_total}$\nGracias por comprar en la primera tienda virtual de Medellín {titulo}. {nombre}.")
+                                v_de_respuesta = False
+                            elif Continuación_de_compra == 'Si':
+                                system('cls')
+            control = False 
         elif a == 2:
             system("cls")
             control = False
             cont = str(input("Por favor ingrese su contraseña: "))
             system("cls")
             if cont != contraseña:
-                print("Contraseña incorrecta, intetalo nuevamente dentro de ")
-                Tiempo_bloqueo = Funciones_del_código.Bloqueo_de_seguridad(10)    
+                print("Contraseña incorrecta, intetalo nuevamente dentro de\n")
+                Tiempo_bloqueo = Funciones_del_código.Bloqueo_de_seguridad(20)    
                 break          
             else: 
                 Control2 = True
