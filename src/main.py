@@ -58,7 +58,7 @@ def main():
                         else:
                             Continuación_de_compra = str(input('Deseas seguir comprando? (Si/No):'))
                             Continuación_de_compra = Continuación_de_compra.capitalize()
-                            Precio_total += inventarios[Sección_producto][producto]['precio']
+                            Precio_total += inventarios[Sección_producto][Producto_compra]['precio']
                             if Continuación_de_compra == 'No':
                                 system('cls')
                                 print(f"El valor total de la compra es de {Precio_total}$\nGracias por comprar en la primera tienda virtual de Medellín {titulo}. {nombre}.")
