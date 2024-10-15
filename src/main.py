@@ -7,7 +7,7 @@ def main():
     contraseña = "Contraseña_predeterminada123"
     control = True
     system('cls')
-    while control == True:
+    while control == True: #Primer bucle de control general 
         lista1 = [1, 2]
         print("1. Cliente\n2.Administrador")
         a = int(input(f"Por favor seleccione su rol (1 o 2): "))
@@ -17,14 +17,14 @@ def main():
         elif a == 1:
             v_control = True
             print("Hola!, para una experiencia mas personalizada, por favor responda las siguientes preguntas:\n")
-            while v_control == True:
+            while v_control == True: 
                 titulo = str(input(" -->Como prefiere que nos refiramos hacia usted? (sr. o sra):"))
                 titulo = titulo.capitalize()
                 if titulo not in ["Sr", "Sra"]:
                     system('cls')
                     print("Por favor verifique su respuesta")
                 else: 
-                    v_control = "false"
+                    v_control = False
                     system("cls")
                     nombre = str(input(" -->Ingrese su nombre:"))
                     nombre = nombre.capitalize()
@@ -33,17 +33,17 @@ def main():
                     l = str(input("Desea ver los productos que tenemos disponibles para usted? (Si/No):"))
                     l = l.capitalize()
                     if l == "No":
-                        break
+                        break #Detiene la continuidad del código en caso de que el usuario No quiera ver los productos disponibles y por tanto no quiera comprar
                     elif l == "Si":
                         system('cls')
                         print(f"Excelente!, procesando...\n" )
-                        print({Funciones_del_código.Bloqueo_de_seguridad(6)}) 
+                        print({Funciones_del_código.Bloqueo_de_seguridad(6)}) #Simula una pantalla de carga para la impresion de los inventarios
                         system('cls')
                         Funciones_del_código.Imprimir_inventarios(inventarios)
                     elif l not in ["Si", "No"]:
                         print("La respuesta ingresada no se encuentra dentro de las opciones disponibles")
                     v_de_respuesta= True
-                    Precio_total = 0
+                    Precio_total = 0 #Acumula los precios de los productos seleccionados
                     while v_de_respuesta == True:
                         Sección_producto = str(input("\nEn que sección se encuentra el producto que deseas comprar? (Mecatos, Aseo, Variedades): "))
                         print(Funciones_del_código.Imprimir_inventarios)
@@ -64,7 +64,7 @@ def main():
                                 print(f"El valor total de la compra es de {Precio_total}$\nGracias por comprar en la primera tienda virtual de Medellín {titulo}. {nombre}.")
                                 v_de_respuesta = False
                             elif Continuación_de_compra == 'Si':
-                                system('cls')
+                                system('cls') #Despeja la terminal para que no se sature con la continuidad del while
             control = False 
         elif a == 2:
             system("cls")
@@ -73,7 +73,7 @@ def main():
             system("cls")
             if cont != contraseña:
                 print("Contraseña incorrecta, intetalo nuevamente dentro de\n")
-                Tiempo_bloqueo = Funciones_del_código.Bloqueo_de_seguridad(20)    
+                Tiempo_bloqueo = Funciones_del_código.Bloqueo_de_seguridad(20)  #Tiempo de bloqueo en caso de ingresar mal la contraseña  
                 break          
             else: 
                 Control2 = True
