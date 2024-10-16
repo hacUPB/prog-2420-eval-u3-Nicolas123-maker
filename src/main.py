@@ -103,7 +103,7 @@ def main():
                                 print("Por favor selecione una opción correcta")
                                 control3 = True
                             elif d == 1:
-                                Producto_nuevo = str(input(f"Que producto deseas modificar?(Asegurate que este se encuentre en el inventario actual), copialo tal cual a aparece aqui{inventarios[v].keys()}: "))
+                                Producto_nuevo = str(input(f"Que producto deseas modificar?(Asegurate que este se encuentre en el inventario actual), copialo tal cual aparece aqui{inventarios[v].keys()}: "))
                                 Producto_nuevo1 = float(input(f"\nPerfecto!, ¿Cuál será el nuevo precio de {Producto_nuevo}?: "))
                                 system('cls')
                                 Funciones_del_código.Modificar_inventarios(inventarios, v, d, Producto_nuevo, Producto_nuevo1)
